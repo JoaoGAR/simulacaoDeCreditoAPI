@@ -18,8 +18,10 @@ class OfertasCreditoController extends Controller
 
     public function listaOfertasPorCPF(Request $request)
     {
+        $request->merge(['cpf' => '111.111.111-11']);
+
         $validator = Validator::make($request->all(), [
-            'cpf' => 'required|string|max:255'
+            'cpf' => 'required|string|max:15'
         ]);
 
         if ($validator->fails()) {
@@ -29,7 +31,7 @@ class OfertasCreditoController extends Controller
                 'errors' => $validator->errors()
             ], 422);
         }
-
+        $cpf = $request->input('cpf');
         $cpf = limpaCPF($cpf);
         $ofertas = $this->ofertaCreditoDAO->listaOfertasPorCPF($cpf);
 

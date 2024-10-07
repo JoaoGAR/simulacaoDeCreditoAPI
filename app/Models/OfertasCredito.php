@@ -10,10 +10,24 @@ class OfertasCredito extends Model
     use HasFactory;
     protected $table = 'tb_oferta_credito';
 
-    public function listaOfertasPorCPF($cpf)
+    public function modalidadeCredito(): HasOne
     {
-        $ofertasCredito = new OfertasCredito();
-        $dados = $ofertasCredito->where('cpf', $cpf)->get();
+        return $this->hasOne(ModalidadeCredito::class, 'id', 'idModalidadeCredito');
+    }
+
+    public function listaOfertasPorCPF($cpf, $idInstituicao, $codModalidade)
+    {
+        $dados = OfertasCredito::select(
+            'tb_oferta_credito.qtdParcelasMin', 
+            'tb_oferta_credito.qtdParcelasMax', 
+            'tb_oferta_credito.valorMin', 
+            'tb_oferta_credito.valorMax', 
+            'tb_oferta_credito.jurosMes'
+        )
+        ->join('tb_modalidade_credito', 'tb_modalidade_credito.id', 'tb_oferta_credito.idModalidadeCredito')
+        ->where('tb_oferta_credito.cpf', $cpf)
+        ->where('tb_modalidade_credito.cod', $codModalidade)
+        ->get();
 
         return $dados;
     }

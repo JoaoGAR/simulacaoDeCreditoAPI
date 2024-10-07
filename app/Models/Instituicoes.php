@@ -16,7 +16,7 @@ class Instituicoes extends Model
         return $this->hasMany(ModalidadeCredito::class, 'idInstituicao', 'id');
     }
 
-    public function getInstituicoes($cpf)
+    public function listaInstituicoes($cpf)
     {
         $dados = Instituicoes::with('modalidadesCredito')->get();
 

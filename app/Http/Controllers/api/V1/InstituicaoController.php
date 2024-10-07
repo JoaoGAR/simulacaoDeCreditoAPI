@@ -4,6 +4,7 @@ namespace App\Http\Controllers\api\V1;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+
 use Illuminate\Support\Facades\Validator;
 
 use App\Models\Instituicoes;
@@ -21,6 +22,9 @@ class InstituicaoController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'cpf' => 'required|string|max:15'
+        ],
+        [
+            'cpf.required' => 'É necessário informar um CPF.',
         ]);
 
         if ($validator->fails()) {
@@ -30,9 +34,11 @@ class InstituicaoController extends Controller
                 'errors' => $validator->errors()
             ], 422);
         }
+
         $cpf = $request->input('cpf');
         $cpf = limpaCPF($cpf);
-        $ofertas = $this->instituicoesDAO->getInstituicoes($cpf);
+        
+        $ofertas = $this->instituicoesDAO->listaInstituicoes($cpf);
 
         return response()->json([
             'instituicoes' => $ofertas

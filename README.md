@@ -15,7 +15,7 @@
 
 **Execute as migrations e seeds**
 >[!NOTE]
-	>Caso dentro do WSL **./vendor/bin/sail artisan migrate** **./vendor/bin/sail artisan db:seed**
+    Caso dentro do WSL **./vendor/bin/sail artisan migrate** **./vendor/bin/sail artisan db:seed**
 
 ## Documentação Postman
 [Postman - Workspace publicado](https://documenter.getpostman.com/view/2516132/2sAXxP9Y9B)

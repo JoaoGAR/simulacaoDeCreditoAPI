@@ -1,14 +1,17 @@
 # Teste Tecnico GOSAT
 
+>[!NOTE]
+	><p>Caso esteja usando Docker destop para windows é necessário clonar o repositório para dentro do Ubunto do WSL2</p>
+	><p>Geralmente Linux/Ubuntu/home/usuario do WSL</p>
+
+ 
+
 ## Ambiente Docker configurado com o Laravel Sail.
 [Laravel 11 Sail Documentação: https://laravel.com/docs/11.x/sail#installing-sail-into-existing-applications](https://laravel.com/docs/11.x/sail#installing-sail-into-existing-applications)
 
 **Execute**
-**./vendor/bin/sail up**
+***./vendor/bin/sail up***
 
->[!NOTE]
-	><p>Caso esteja usando Docker destop para windows é necessário clonar o repositório para dentro do Ubunto do WSL2</p>
-	><p>Geralmente Linux/Ubuntu/home/usuario do WSL</p>
 
 **Execute as migrations e seeds**
 >[!NOTE]
@@ -17,7 +20,7 @@
 ## Documentação Postman
 [Postman - Workspace publicado](https://documenter.getpostman.com/view/2516132/2sAXxP9Y9B)
 
-***TesteTecnicoGosat***
+**TesteTecnicoGosat POSTMAN**
 [http://localhost/api/v1/simulacao/credito?cpf=123.123.123.12](http://localhost/api/v1/simulacao/credito?cpf=123.123.123.12)
 
 | key | value |

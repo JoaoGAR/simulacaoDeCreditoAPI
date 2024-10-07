@@ -3,4 +3,4 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
-Route::post('/simulacaoDeCredito', [App\Http\Controllers\OfertasCreditoController::class, 'simulacaoDeCredito']);
+Route::post('/v1/simulacaoDeCredito', [App\Http\Controllers\api\V1\InstituicaoController::class, 'simulacaoDeCredito']);

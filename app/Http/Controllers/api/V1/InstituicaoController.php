@@ -1,19 +1,20 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\api\V1;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
-use App\Models\OfertasCredito;
+use App\Models\Instituicoes;
 
-class OfertasCreditoController extends Controller
+class InstituicaoController extends Controller
 {
-    protected $ofertaCreditoDAO;
+    protected $instituicoesDAO;
 
-    public function __construct(OfertasCredito $ofertaCreditoDAO)
+    public function __construct(Instituicoes $instituicoesDAO)
     {
-        $this->ofertaCreditoDAO = $ofertaCreditoDAO;
+        $this->instituicoesDAO = $instituicoesDAO;
     }
 
     public function simulacaoDeCredito(Request $request)
@@ -31,12 +32,10 @@ class OfertasCreditoController extends Controller
         }
         $cpf = $request->input('cpf');
         $cpf = limpaCPF($cpf);
-        $ofertas = $this->ofertaCreditoDAO->listaOfertasPorCPF($cpf);
+        $ofertas = $this->instituicoesDAO->getInstituicoes($cpf);
 
         return response()->json([
-            'status' => true,
-            'message' => "Ofertas listadas com sucesso!",
-            'ofertas' => $ofertas
+            'instituicoes' => $ofertas
         ], 200);
     }
 }

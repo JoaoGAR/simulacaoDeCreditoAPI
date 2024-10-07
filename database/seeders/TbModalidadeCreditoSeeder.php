@@ -20,15 +20,15 @@ class TbModalidadeCreditoSeeder extends Seeder
             DB::table('tb_modalidade_credito')->insert([
                 [
                     'nome' => 'Crédito Pessoal',
-                    'cod' => 'CP_' . Str::upper(Str::random(16)),
                     'idInstituicao' => $instituicaoId,
+                    'cod' => Str::upper(Str::random(16)),
                     'created_at' => now(),
                     'updated_at' => now(),
                 ],
                 [
                     'nome' => 'Crédito Consignado',
-                    'cod' => 'CC_' . Str::upper(Str::random(16)),
                     'idInstituicao' => $instituicaoId,
+                    'cod' => Str::upper(Str::random(16)),
                     'created_at' => now(),
                     'updated_at' => now(),
                 ],

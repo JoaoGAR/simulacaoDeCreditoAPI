@@ -14,8 +14,8 @@ class TbOfertaCreditoSeeder extends Seeder
     public function run(): void
     {
         $instituicoes = DB::table('tb_instituicao')->pluck('id');
-        $min = 0.02;
-        $max = 3.00;
+        $min = 2.00;
+        $max = 4.00;
 
         foreach ($instituicoes as $instituicaoId) {
 
@@ -28,9 +28,9 @@ class TbOfertaCreditoSeeder extends Seeder
                                 'idModalidadeCredito' => $modalidadeCredito->id,
                                 'qtdparcelasmin' => mt_rand(1, 12),
                                 'qtdparcelasmax' => mt_rand(13, 50),
-                                'valorMin' => mt_rand(200, 1000),
-                                'valorMax' => mt_rand(1500, 5000),
-                                'jurosMes' => ($min + ($max - $min) * (mt_rand() / mt_getrandmax())),
+                                'valorMin' => mt_rand(1000, 5000),
+                                'valorMax' => mt_rand(5100, 50000),
+                                'jurosMes' => round(($min + ($max - $min) * (mt_rand() / mt_getrandmax())), 2),
                                 'created_at' => now(),
                                 'updated_at' => now(),
                             ],
@@ -39,9 +39,9 @@ class TbOfertaCreditoSeeder extends Seeder
                                 'idModalidadeCredito' => $modalidadeCredito->id,
                                 'qtdparcelasmin' => mt_rand(1, 12),
                                 'qtdparcelasmax' => mt_rand(13, 50),
-                                'valorMin' => mt_rand(200, 1000),
-                                'valorMax' => mt_rand(1500, 5000),
-                                'jurosMes' => ($min + ($max - $min) * (mt_rand() / mt_getrandmax())),
+                                'valorMin' => mt_rand(1000, 5000),
+                                'valorMax' => mt_rand(5100, 50000),
+                                'jurosMes' => round(($min + ($max - $min) * (mt_rand() / mt_getrandmax())), 2),
                                 'created_at' => now(),
                                 'updated_at' => now(),
                             ],
@@ -50,9 +50,9 @@ class TbOfertaCreditoSeeder extends Seeder
                                 'idModalidadeCredito' => $modalidadeCredito->id,
                                 'qtdparcelasmin' => mt_rand(1, 12),
                                 'qtdparcelasmax' => mt_rand(13, 50),
-                                'valorMin' => mt_rand(200, 1000),
-                                'valorMax' => mt_rand(1500, 5000),
-                                'jurosMes' => ($min + ($max - $min) * (mt_rand() / mt_getrandmax())),
+                                'valorMin' => mt_rand(1000, 5000),
+                                'valorMax' => mt_rand(5100, 50000),
+                                'jurosMes' => round(($min + ($max - $min) * (mt_rand() / mt_getrandmax())), 2),
                                 'created_at' => now(),
                                 'updated_at' => now(),
                             ],

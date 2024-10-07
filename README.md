@@ -7,13 +7,11 @@
 `./vendor/bin/sail up` ou `docker-compose up -d`
 
 >[!NOTE]
-	>
 	>Caso esteja usando Docker destop para windows é necessário clonar o repositório para dentro do Ubunto do WSL2
 	>Geralmente Linux/Ubuntu/home/usuario do WSL
 
 **Execute as migrations e seeds**
 >[!NOTE]
-	>
 	>Caso dentro do WSL `./vendor/bin/sail artisan migrate` `./vendor/bin/sail artisan db:seed`
 
 ## Documentação Postman

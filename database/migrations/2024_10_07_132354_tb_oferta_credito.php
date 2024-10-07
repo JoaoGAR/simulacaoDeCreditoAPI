@@ -12,17 +12,17 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('tb_oferta_credito', function (Blueprint $table) {
-            $table->id('cd_oferta_credito');
-            $table->unsignedBigInteger('cd_modalidade_credito');
-            $table->bigInteger('nu_cpf')->length(11);
-            $table->integer('nu_parcelas_min');
-            $table->integer('nu_parcelas_max');
-            $table->float('nu_valor_min');
-            $table->float('nu_valor_max');
-            $table->float('nu_juros_ao_mes');
+            $table->id('id');
+            $table->unsignedBigInteger('idModalidadeCredito');
+            $table->bigInteger('cpf')->length(11);
+            $table->integer('qtdParcelasMin');
+            $table->integer('qtdParcelasMax');
+            $table->float('valorMin');
+            $table->float('valorMax');
+            $table->float('jurosMes');
             $table->timestamps();
 
-            $table->foreign('cd_modalidade_credito')->references('cd_modalidade_credito')->on('tb_modalidade_credito')->onDelete('cascade');
+            $table->foreign('idModalidadeCredito')->references('id')->on('tb_modalidade_credito')->onDelete('cascade');
         });
     }
 

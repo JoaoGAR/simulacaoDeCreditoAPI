@@ -12,13 +12,13 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('tb_modalidade_credito', function (Blueprint $table) {
-            $table->id('cd_modalidade_credito');
-            $table->unsignedBigInteger('cd_instituicao');
-            $table->string('nm_modalidade_credito', 255);
-            $table->string('cd_modalidade_credito_inst', 255);
+            $table->id('id');
+            $table->unsignedBigInteger('idInstituicao');
+            $table->string('nome', 255);
+            $table->string('cod', 255);
             $table->timestamps();
 
-            $table->foreign('cd_instituicao')->references('cd_instituicao')->on('tb_instituicao')->onDelete('cascade');
+            $table->foreign('idInstituicao')->references('id')->on('tb_instituicao')->onDelete('cascade');
         });
     }
 

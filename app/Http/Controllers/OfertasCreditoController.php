@@ -16,10 +16,8 @@ class OfertasCreditoController extends Controller
         $this->ofertaCreditoDAO = $ofertaCreditoDAO;
     }
 
-    public function listaOfertasPorCPF(Request $request)
+    public function simulacaoDeCredito(Request $request)
     {
-        $request->merge(['cpf' => '111.111.111-11']);
-
         $validator = Validator::make($request->all(), [
             'cpf' => 'required|string|max:15'
         ]);

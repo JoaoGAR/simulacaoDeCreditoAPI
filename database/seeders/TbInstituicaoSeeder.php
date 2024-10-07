@@ -15,27 +15,27 @@ class TbInstituicaoSeeder extends Seeder
     {
         DB::table('tb_instituicao')->insert([
             [
-                'nm_instituicao' => 'Banco do Brasil',
+                'nome' => 'Banco do Brasil',
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
             [
-                'nm_instituicao' => 'Caixa Econômica Federal',
+                'nome' => 'Caixa Econômica Federal',
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
             [
-                'nm_instituicao' => 'Itaú Unibanco',
+                'nome' => 'Itaú Unibanco',
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
             [
-                'nm_instituicao' => 'Bradesco',
+                'nome' => 'Bradesco',
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
             [
-                'nm_instituicao' => 'Santander',
+                'nome' => 'Santander',
                 'created_at' => now(),
                 'updated_at' => now(),
             ],

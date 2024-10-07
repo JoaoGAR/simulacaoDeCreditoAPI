@@ -13,7 +13,7 @@ class OfertasCredito extends Model
     public function listaOfertasPorCPF($cpf)
     {
         $ofertasCredito = new OfertasCredito();
-        $dados = $ofertasCredito->where('nu_cpf', $cpf)->get();
+        $dados = $ofertasCredito->where('cpf', $cpf)->get();
 
         return $dados;
     }

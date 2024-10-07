@@ -14,21 +14,21 @@ class TbModalidadeCreditoSeeder extends Seeder
      */
     public function run(): void
     {
-        $instituicoes = DB::table('tb_instituicao')->pluck('cd_instituicao');
+        $instituicoes = DB::table('tb_instituicao')->pluck('id');
 
         foreach ($instituicoes as $instituicaoId) {
             DB::table('tb_modalidade_credito')->insert([
                 [
-                    'nm_modalidade_credito' => 'Crédito Pessoal',
-                    'cd_modalidade_credito_inst' => 'CP_' . Str::upper(Str::random(16)),
-                    'cd_instituicao' => $instituicaoId,
+                    'nome' => 'Crédito Pessoal',
+                    'cod' => 'CP_' . Str::upper(Str::random(16)),
+                    'idInstituicao' => $instituicaoId,
                     'created_at' => now(),
                     'updated_at' => now(),
                 ],
                 [
-                    'nm_modalidade_credito' => 'Crédito Consignado',
-                    'cd_modalidade_credito_inst' => 'CC_' . Str::upper(Str::random(16)),
-                    'cd_instituicao' => $instituicaoId,
+                    'nome' => 'Crédito Consignado',
+                    'cod' => 'CC_' . Str::upper(Str::random(16)),
+                    'idInstituicao' => $instituicaoId,
                     'created_at' => now(),
                     'updated_at' => now(),
                 ],

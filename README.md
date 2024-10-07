@@ -8,6 +8,7 @@
 
 >[!NOTE]
 	>Caso esteja usando Docker destop para windows é necessário clonar o repositório para dentro do Ubunto do WSL2
+	
 	>Geralmente Linux/Ubuntu/home/usuario do WSL
 
 **Execute as migrations e seeds**

@@ -4,7 +4,7 @@
 [Laravel 11 Sail Documentação: https://laravel.com/docs/11.x/sail#installing-sail-into-existing-applications](https://laravel.com/docs/11.x/sail#installing-sail-into-existing-applications)
 
 **Execute**
-**./vendor/bin/sail up** ou **docker-compose up -d**
+**./vendor/bin/sail up**
 
 >[!NOTE]
 	><p>Caso esteja usando Docker destop para windows é necessário clonar o repositório para dentro do Ubunto do WSL2</p>

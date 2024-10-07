@@ -1,8 +1,8 @@
 # Teste Tecnico GOSAT
 
 >[!NOTE]
-	><p>Caso esteja usando Docker destop para windows é necessário clonar o repositório para dentro do Ubunto do WSL2</p>
-	><p>Geralmente Linux/Ubuntu/home/usuario do WSL</p>
+    <p>Caso esteja usando Docker destop para windows é necessário clonar o repositório para dentro do Ubunto do WSL2</p>
+    <p>Geralmente Linux/Ubuntu/home/usuario do WSL</p>
 
  
 

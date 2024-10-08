@@ -12,15 +12,23 @@ Artisan::command('inspire', function () {
 })->purpose('Display an inspiring quote')->hourly();
 
 Artisan::command('salvaTresMelhoresOfertasCredito', function () {
+    $cpf = '11111111111';
     $ofertaCredito = new OfertaCreditoService();
     $ofertasCreditoDAO = new OfertasCredito();
-    $melhoresOfertasDAO = new MelhoresOfertas();
 
-    $ofertas = $ofertasCreditoDAO->listaOfertasPorCPF('111.111.111-11');
+    $ofertas = $ofertasCreditoDAO->listaOfertasPorCPF($cpf);
     $melhoresOfertas = $ofertaCredito->calculaTresMelhoresOfertas($ofertas);
 
     foreach ($melhoresOfertas as $key => $melhorOferta) {
-        $melhorOfertaDAO = $melhoresOfertasDAO::firstOrCreate($melhorOferta);
+        $melhorOfertaDAO = new MelhoresOfertas();
+        $melhorOfertaDAO->cpf = $cpf;
+        $melhorOfertaDAO->qtdParcelasMin = $melhorOferta->qtdParcelasMin;
+        $melhorOfertaDAO->qtdParcelasMax = $melhorOferta->qtdParcelasMax;
+        $melhorOfertaDAO->valorMin = $melhorOferta->valorMin;
+        $melhorOfertaDAO->valorMax = $melhorOferta->valorMax;
+        $melhorOfertaDAO->jurosMes = $melhorOferta->jurosMes;
+        $melhorOfertaDAO->valorFinalMin = $melhorOferta->valorFinalMin;
+        $melhorOfertaDAO->valorFinalMax = $melhorOferta->valorFinalMax;
         $melhorOfertaDAO->save();
     }
 })->purpose('Salvar as 3 melhores ofertas de um CPF no banco')->everyFiveMinutes();

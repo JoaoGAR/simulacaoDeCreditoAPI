@@ -10,7 +10,7 @@
 [Laravel 11 Sail Documentação: https://laravel.com/docs/11.x/sail#installing-sail-into-existing-applications](https://laravel.com/docs/11.x/sail#installing-sail-into-existing-applications)
 
 **Execute**
-***./vendor/bin/sail up***
+***./vendor/bin/sail up -d***
 
 
 **Execute as migrations e seeds**

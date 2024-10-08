@@ -42,3 +42,7 @@
 | key | value |
 |--- |--- |
 | cpf | 123.123.123.12 |
+
+
+# O frontend separado esta no arquivo zipado ´"testeTecnicoGosatFront.7z"´, vou tentar enviar por e-mail também.
+**É apenas descompactar e abrir o index.html no navegador.**

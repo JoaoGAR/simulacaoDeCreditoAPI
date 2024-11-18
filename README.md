@@ -1,4 +1,4 @@
-# Teste Tecnico GOSAT
+# Simulação de crédito API
 
 >[!NOTE]
     <p>Caso esteja usando Docker destop para windows é necessário clonar o repositório para dentro do Ubunto do WSL2</p>
@@ -20,7 +20,7 @@
 ## Documentação Postman
 [Postman - Workspace publicado](https://documenter.getpostman.com/view/2516132/2sAXxP9Y9B)
 
-**TesteTecnicoGosat POSTMAN**
+**TesteTecnico POSTMAN**
 [http://localhost/api/v1/simulacao/credito?cpf=123.123.123.12](http://localhost/api/v1/simulacao/credito?cpf=123.123.123.12)
 
 | key | value |
@@ -42,7 +42,3 @@
 | key | value |
 |--- |--- |
 | cpf | 123.123.123.12 |
-
-
-# O frontend separado esta no arquivo zipado ´"testeTecnicoGosatFront.7z"´, vou tentar enviar por e-mail também.
-**É apenas descompactar e abrir o index.html no navegador.**
